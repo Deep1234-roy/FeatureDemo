@@ -1,0 +1,37 @@
+<mat-accordion class="d-flex justify-content-center">
+  <mat-expansion-panel
+    [expanded]="panelOpenOrg"
+    (opened)="panelOpenOrg = true"
+    (closed)="panelOpenOrg = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Organizations </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      <mat-list-item
+        style="cursor: pointer"
+        role="listitem"
+        *ngFor="let org of organizationList"
+        (click)="getFacilities(org)"
+        >{{org.name}}</mat-list-item
+      >
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+<br>
+<mat-accordion  class="d-flex justify-content-center" *ngIf="facilities.length>0">
+  <mat-expansion-panel
+    [expanded]="panelOpenFacilities"
+    (opened)="panelOpenFacilities = true"
+    (closed)="panelOpenFacilities = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Facilities </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      <!-- <h6><i>Facilities correspoding to : {{facilities}}</i></h6> -->
+      <mat-list-item role="listitem" *ngFor="let fac of facilities">{{fac.name}}</mat-list-item
+      >
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

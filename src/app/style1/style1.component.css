@@ -1,0 +1,19 @@
+.example-viewport {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 300px;
+  border: 1px solid rgb(247, 244, 244);
+  background-color: aqua;
+
+}
+
+.example-item {
+  height: 50px;
+}
+
+.example {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
